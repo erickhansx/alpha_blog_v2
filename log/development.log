@@ -1648,3 +1648,27 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.7ms | Allocations: 3610)
 
 
+Started GET "/articles/1/edit" for ::1 at 2023-05-18 13:56:04 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/edit.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1103)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 3210)
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 0.7ms | Allocations: 3980)
+
+
+Started PATCH "/articles/1" for ::1 at 2023-05-18 13:56:10 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "description"=>"edited - description of first article"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2322)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4429)
+Completed 200 OK in 34ms (Views: 22.3ms | ActiveRecord: 0.9ms | Allocations: 6293)
+
+
