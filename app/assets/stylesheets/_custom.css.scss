@@ -1,5 +1,46 @@
 @import 'bootstrap';
 
+html,
+body {
+  height: 100%;
+}
+
 .navbar {
   background-color: rgb(199, 55, 204) !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container {
+  padding-top: 25px;
+}
+
+.jumbotron {
+  background-image: asset-url('background.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 425px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.page-content {
+  background-color: lightgray;
+  height: 90vh;
 }
