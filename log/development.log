@@ -3623,3 +3623,66 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 7834)
 
 
+Started GET "/" for ::1 at 2023-05-24 13:42:40 -0600
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 10607.9ms | Allocations: 69539)
+Completed 200 OK in 10609ms (Views: 10608.6ms | Allocations: 69798)
+
+
+Started GET "/articles" for ::1 at 2023-05-24 13:52:08 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:13
+  Rendered articles/index.html.erb within layouts/application (Duration: 56.6ms | Allocations: 5022)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 99)
+  Rendered layout layouts/application.html.erb (Duration: 79.7ms | Allocations: 11273)
+Completed 200 OK in 86ms (Views: 84.2ms | ActiveRecord: 22.0ms | Allocations: 11854)
+
+
+Started GET "/articles" for ::1 at 2023-05-24 14:46:14 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:27
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 4976)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 160)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 270)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 11890)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 7.9ms | Allocations: 12645)
+
+
+Started GET "/articles" for ::1 at 2023-05-24 14:46:57 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:27
+  Rendered articles/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 2009)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 160)
+  Rendered layouts/_navigation.html.erb (Duration: 3.0ms | Allocations: 270)
+  Rendered layout layouts/application.html.erb (Duration: 65.3ms | Allocations: 8932)
+Completed 200 OK in 74ms (Views: 69.6ms | ActiveRecord: 1.0ms | Allocations: 9687)
+
+
+Started GET "/articles" for ::1 at 2023-05-24 14:47:22 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:27
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2009)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 160)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 270)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 8900)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.3ms | Allocations: 9655)
+
+
