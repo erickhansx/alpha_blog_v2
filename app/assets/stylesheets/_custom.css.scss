@@ -3,6 +3,7 @@
 html,
 body {
   height: 100%;
+  background-color: lightgray;
 }
 
 .navbar {
@@ -24,6 +25,7 @@ body {
 
 #home-container {
   padding-top: 25px;
+  height: 100vh;
 }
 
 .jumbotron {
@@ -41,6 +43,9 @@ body {
 }
 
 .page-content {
-  background-color: lightgray;
-  height: 90vh;
+  flex: 1 0 auto;
+}
+
+.ss-100vh {
+  height: 100%;
 }

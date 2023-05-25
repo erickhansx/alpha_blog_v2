@@ -1,26 +1,27 @@
 
+<div class="container">
 
-<% if @article.errors.any?  %>
-  <h1>The following errors prevented the article from being saved:</h1>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+  <div class="row justify-content-center">
+    <div class="col-10 d-flex flex-column">
+    <%= render 'shared/errors' %>
+    <%= form_with(model: @article, class:"shadow p-5 mb-5 bg-info rounded", data: {turbo: false}, local: true) do |f| %>
+      <div class="form-group row">
+        <%= f.label :title, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_field :title, class: "form-control shadow mt-2bg-white rounded", placeholder:"Title" %>  
+        </div>
+      </div>
+
+      <div class="form-group row mt-4">
+        <%= f.label :description, class: "col-2 col-form-label text-light"  %>
+        <div class="col-10">
+          <%= f.text_area :description, rows:10 ,class: "form-control form-control shadow mt-2 bg-white rounded", placeholder:"Description" %>  
+        </div>
+      <div class="form-group row justify-content-center text-center mt-4"> 
+        <p><%= f.submit class: "btn btn-outline-light btn-lg" %></p>
+      </div>
     <%end%>
-  </ul>
-<% end %>
-
-
-<%= form_with(model: @article, data: {turbo: false}, local: true) do |f| %>
-
-  <p>
-    <%= f.label :title %></br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %></br>
-    <%= f.text_area :description %>  
-  </p>
-  <p><%= f.submit %></p>
-
-
-<%end%>
+    </div>
+    <%= link_to "[ Cancel and return to articles listing ]", articles_path, class:"text-center text-info" %>
+  </div>
+</div>
