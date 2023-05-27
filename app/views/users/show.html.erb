@@ -1,0 +1,6 @@
+<h1 class = "text-center pt-4 ss-100vh"><%= @user.username.upcase %>'s profile</h1>
+<%= gravatar_for @user, size:200 %>
+
+<h3 class = "text-center pt-4 ss-100vh">Articles</h3>
+
+<%= render 'articles/article' %>
