@@ -8832,3 +8832,215 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 70ms (Views: 67.0ms | ActiveRecord: 1.3ms | Allocations: 17183)
 
 
+Started GET "/users/3/edit" for ::1 at 2023-05-26 17:47:28 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.7ms | Allocations: 231)
+  Rendered users/_form.html.erb (Duration: 16.0ms | Allocations: 4178)
+  Rendered users/edit.html.erb within layouts/application (Duration: 17.5ms | Allocations: 4636)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 337)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 172)
+  Rendered layout layouts/application.html.erb (Duration: 113.0ms | Allocations: 52981)
+Completed 200 OK in 145ms (Views: 116.0ms | ActiveRecord: 5.1ms | Allocations: 64921)
+
+
+Started PATCH "/users/3" for ::1 at 2023-05-26 17:47:31 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"janedoe", "email"=>"JaneDoe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Update account", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "janedoe"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "JaneDoe@example.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.9ms | Allocations: 409)
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 2015)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2077)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 130)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 8156)
+Completed 200 OK in 39ms (Views: 19.4ms | ActiveRecord: 6.2ms | Allocations: 13763)
+
+
+Started PATCH "/users/3" for ::1 at 2023-05-26 17:47:34 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"janedoe", "email"=>"JaneDoe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Update account", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "janedoe"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "JaneDoe@example.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 2.1ms | Allocations: 314)
+  Rendered users/_form.html.erb (Duration: 7.8ms | Allocations: 1904)
+  Rendered users/edit.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1966)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 130)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 8173)
+Completed 200 OK in 83ms (Views: 27.0ms | ActiveRecord: 3.4ms | Allocations: 13021)
+
+
+Started PATCH "/users/3" for ::1 at 2023-05-26 17:59:10 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"janedoe", "email"=>"JaneDoe@example.com", "password"=>"[FILTERED]"}, "commit"=>"Update account", "id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "janedoe"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "JaneDoe@example.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2, "password_digest" = $3 WHERE "users"."id" = $4[0m  [["email", "janedoe@example.com"], ["updated_at", "2023-05-26 23:59:10.570106"], ["password_digest", "[FILTERED]"], ["id", 3]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 353ms (ActiveRecord: 27.9ms | Allocations: 8852)
+
+
+Started GET "/articles" for ::1 at 2023-05-26 17:59:10 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 52.5ms | Allocations: 16676)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 68.1ms | Allocations: 23068)
+Completed 200 OK in 77ms (Views: 63.0ms | ActiveRecord: 7.2ms | Allocations: 24869)
+
+
+Started GET "/users/3/edit" for ::1 at 2023-05-26 17:59:21 -0600
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 1333)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1395)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 130)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 7473)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.3ms | Allocations: 8246)
+
+
+Started GET "/users/6/edit" for ::1 at 2023-05-26 17:59:23 -0600
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered users/_form.html.erb (Duration: 6.3ms | Allocations: 1347)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1409)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 130)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 7487)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.3ms | Allocations: 8259)
+
+
+Started PATCH "/users/6" for ::1 at 2023-05-26 17:59:35 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"erick2", "email"=>"erick27@example.com", "password"=>"[FILTERED]"}, "commit"=>"Update account", "id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "erick2"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "erick27@example.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "erick27@example.com"], ["updated_at", "2023-05-26 23:59:35.919172"], ["id", 6]]
+  ↳ app/controllers/users_controller.rb:12:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12:in `update'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 66ms (ActiveRecord: 9.3ms | Allocations: 4754)
+
+
+Started GET "/articles" for ::1 at 2023-05-26 17:59:35 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 37.0ms | Allocations: 10648)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 17066)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 1.2ms | Allocations: 17337)
+
+
