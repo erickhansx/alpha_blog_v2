@@ -21278,3 +21278,385 @@ Processing by PagesController#home as TURBO_STREAM
 Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 6671)
 
 
+Started DELETE "/logout" for ::1 at 2023-05-28 20:27:42 -0600
+Processing by SessionsController#destroy as TURBO_STREAM
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 421)
+
+
+Started GET "/" for ::1 at 2023-05-28 20:27:42 -0600
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 222)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 693)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 19237)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 20330)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+  <% flash.each do |name, msg| %>
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <%= name ":" msg %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <% end %>
+</div>
+):
+1:    <div class="container">
+2:      <% flash.each do |name, msg| %>
+3:      <div class="alert alert-success alert-dismissible" role="alert">
+4:        <%= name ":" msg %>
+5:        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+6:      </div>
+7:      <% end %>
+8:    </div>
+  
+app/views/layouts/_messages.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_messages.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_messages.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_messages.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_messages.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_messages.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/application.html.erb:16
+Started GET "/users" for ::1 at 2023-05-28 20:27:58 -0600
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 35.6ms | Allocations: 11744)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 693)
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 1116)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 19862)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 7.9ms | Allocations: 22286)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<ActionView::Base:0x00000000036218>):
+    1: <div class="container">
+    2:   <% flash.each do |name, msg| %>
+    3:   <div class="alert alert-success alert-dismissible" role="alert">
+    4:     <%= name msg %>
+    5:     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    6:   </div>
+    7:   <% end %>
+  
+app/views/layouts/_messages.html.erb:4
+app/views/layouts/_messages.html.erb:2
+app/views/layouts/application.html.erb:16
+Started GET "/users" for ::1 at 2023-05-28 20:28:12 -0600
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 7310)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 696)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 183)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 14768)
+Completed 200 OK in 44ms (Views: 37.6ms | ActiveRecord: 3.1ms | Allocations: 15661)
+
+
+Started GET "/users" for ::1 at 2023-05-28 20:28:29 -0600
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 17.6ms | Allocations: 7314)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 693)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 199)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 14766)
+Completed 200 OK in 35ms (Views: 30.7ms | ActiveRecord: 2.1ms | Allocations: 15651)
+
+
+Started GET "/sign_up" for ::1 at 2023-05-28 20:28:34 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.3ms | Allocations: 210)
+  Rendered users/_form.html.erb (Duration: 8.7ms | Allocations: 1959)
+  Rendered users/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2192)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 214)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 8364)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms | Allocations: 8707)
+
+
+Started POST "/users" for ::1 at 2023-05-28 20:28:55 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"testingalert", "email"=>"testingalert@example.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "testingalert"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "testingalert@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "testingalert"], ["email", "testingalert@example.com"], ["created_at", "2023-05-29 02:28:56.168399"], ["updated_at", "2023-05-29 02:28:56.168399"], ["password_digest", "[FILTERED]"], ["admin", false]]
+  ↳ app/controllers/users_controller.rb:33:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:33:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 265ms (ActiveRecord: 2.3ms | Allocations: 4548)
+
+
+Started GET "/articles" for ::1 at 2023-05-28 20:28:56 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  Rendered articles/_article.html.erb (Duration: 17.5ms | Allocations: 9578)
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 11223)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 425)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 17693)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 2.6ms | Allocations: 18505)
+
+
+Started DELETE "/logout" for ::1 at 2023-05-28 20:29:59 -0600
+Processing by SessionsController#destroy as TURBO_STREAM
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/" for ::1 at 2023-05-28 20:29:59 -0600
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 208)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 696)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 217)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 7747)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 8799)
+
+
+Started GET "/login" for ::1 at 2023-05-28 20:30:35 -0600
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1167)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 692)
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 235)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 8667)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.0ms | Allocations: 9535)
+
+
+Started POST "/login" for ::1 at 2023-05-28 20:30:46 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"erick2@test.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "erick2@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 646)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 215)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 6805)
+Completed 200 OK in 19ms (Views: 14.0ms | ActiveRecord: 0.5ms | Allocations: 7873)
+
+
+Started GET "/users" for ::1 at 2023-05-28 20:31:09 -0600
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 7290)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 693)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 234)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 14778)
+Completed 200 OK in 41ms (Views: 35.6ms | ActiveRecord: 2.6ms | Allocations: 15661)
+
+
+Started GET "/users/4" for ::1 at 2023-05-28 20:31:10 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 4], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 2.0ms | Allocations: 991)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2296)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 223)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 8469)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.8ms | Allocations: 9504)
+
+
+Started GET "/users/4/edit" for ::1 at 2023-05-28 20:31:13 -0600
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 846)
+
+
+Started GET "/login" for ::1 at 2023-05-28 20:31:13 -0600
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1191)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 230)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 7458)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 8020)
+
+
+Started POST "/login" for ::1 at 2023-05-28 20:31:58 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"erick2@xcsvfcds.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "erick2@xcsvfcds.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1004)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 691)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 227)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 8480)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.3ms | Allocations: 10013)
+
+
+Started GET "/login" for ::1 at 2023-05-28 20:32:01 -0600
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 817)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 215)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 6999)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms | Allocations: 7260)
+
+
+Started POST "/login" for ::1 at 2023-05-28 20:32:08 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"hymera.lab@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hymera.lab@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 272ms (ActiveRecord: 0.4ms | Allocations: 981)
+
+
+Started GET "/users/2" for ::1 at 2023-05-28 20:32:08 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:13
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1 LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 5.2ms | Allocations: 2725)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.0ms | Allocations: 5376)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 425)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 11835)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 1.1ms | Allocations: 13102)
+
+
+Started DELETE "/logout" for ::1 at 2023-05-28 20:32:11 -0600
+Processing by SessionsController#destroy as TURBO_STREAM
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/" for ::1 at 2023-05-28 20:32:11 -0600
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 207)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 232)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 6527)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 7307)
+
+
