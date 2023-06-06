@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -20,9 +19,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [AlphaBlog] <a name="about-project"></a> 
+# 📖 [AlphaBlog] <a name="about-project"></a>
 
-**[AlphaBlog]** is a that project was created with the intention of users being able to create their account and write articles and post them to their blog and share them. Look for posts by others. 
+**[AlphaBlog]** is a that project was created with the intention of users being able to create their account and write articles and post them to their blog and share them. Look for posts by others .
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -64,6 +63,8 @@ In order to run this project you need:
   1. Remove config/master.key and config/credentials. yml.enc
   2. Run in the terminal: EDITOR=code rails   credentials:edit
   3. This command will create a new master.key and  credentials.yml.enc if they do not exist.
+  ```
+
 ### Setup
 
 Clone this repository to your desired folder:
@@ -109,13 +110,11 @@ To run tests, run the following command:
   rails test
 ```
 
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
 > Mention all of the collaborators of this project.
-
 
 👤 _Erick Hans Martinez_
 
@@ -124,7 +123,6 @@ To run tests, run the following command:
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- SUPPORT -->
 
