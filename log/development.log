@@ -27136,3 +27136,87 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 3.6ms | Allocations: 14596)
 
 
+Started GET "/users" for ::1 at 2023-06-01 12:25:02 -0600
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:8
+  [1m[36mArticle Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/users/index.html.erb:19
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/views/users/index.html.erb:19
+  Rendered users/index.html.erb within layouts/application (Duration: 48.2ms | Allocations: 10824)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 451)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 60.3ms | Allocations: 17235)
+Completed 200 OK in 64ms (Views: 61.6ms | ActiveRecord: 13.8ms | Allocations: 17633)
+
+
+Started GET "/" for ::1 at 2023-06-01 12:25:03 -0600
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 827)
+
+
+Started GET "/articles" for ::1 at 2023-06-01 12:25:03 -0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1 LIMIT $2[0m  [["article_id", 14], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 14]]
+  ↳ app/views/articles/_article.html.erb:10
+  Rendered collection of categories/_category.html.erb [4 times] (Duration: 0.5ms | Allocations: 317)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1 LIMIT $2[0m  [["article_id", 15], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 1]]
+  ↳ app/views/articles/_article.html.erb:10
+  Rendered collection of categories/_category.html.erb [2 times] (Duration: 0.6ms | Allocations: 209)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1 LIMIT $2[0m  [["article_id", 8], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1[0m  [["article_id", 8]]
+  ↳ app/views/articles/_article.html.erb:10
+  Rendered collection of categories/_category.html.erb [3 times] (Duration: 0.8ms | Allocations: 255)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:7
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" INNER JOIN "article_categories" ON "categories"."id" = "article_categories"."category_id" WHERE "article_categories"."article_id" = $1 LIMIT $2[0m  [["article_id", 16], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 43.4ms | Allocations: 18530)
+  Rendered articles/index.html.erb within layouts/application (Duration: 47.4ms | Allocations: 20338)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 474)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 57.0ms | Allocations: 26853)
+Completed 200 OK in 59ms (Views: 53.2ms | ActiveRecord: 5.0ms | Allocations: 27668)
+
+
